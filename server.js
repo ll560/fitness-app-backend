@@ -21,5 +21,5 @@ const ensureLoggedIn = require('./config/ensureLoggedIn')
 app.use('/api/v1/workouts', ensureLoggedIn, require('./routes/api/workouts.js'))
 
 //====PORT====
-const port = 8080
+const port = process.env.PORT || 8080
 app.listen(port, () => console.log(`Express app running on port ${port}`))
