@@ -15,8 +15,10 @@ app.use(require('./config/checkToken'))
 //===ROUTES====
 //Users
 app.use('/api/v1/users', require('./routes/api/users.js'))
-//const ensureLoggedIn = require('./config/ensureLoggedIn')
+const ensureLoggedIn = require('./config/ensureLoggedIn')
 
+//Workouts
+app.use('/api/v1/workouts', ensureLoggedIn, require('./routes/api/workouts.js'))
 
 //====PORT====
 const port = 8080

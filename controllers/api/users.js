@@ -36,6 +36,7 @@ const show = async (req, res) => {
     try {
         const foundUser = await User.findById(req.params.id)
         res.status(200).json(foundUser)
+        
     } catch(e) {
         res.status(400).json({msg: e.message})
     }
