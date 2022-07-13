@@ -3,6 +3,7 @@ const Workout = require('../../models/Workout')
 //find all workouts
 const index = async (req, res) => {
     try{
+        console.log(req.user)
         const workouts = await Workout.find({})//find({}) is a way for mongoose to find the whole document 
         res.status(200).json(workouts)
     }catch(e){
